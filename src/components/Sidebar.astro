@@ -41,6 +41,8 @@ const { selectedItem } = Astro.props;
         />
         <div>Home</div>
       </a>
+
+      <!-- About -->
       <a href="/codefolio/about/" class="nav-link-container">
         <img
           src="/codefolio/assets/browser.svg"
@@ -50,6 +52,7 @@ const { selectedItem } = Astro.props;
         />
         <div>About</div>
       </a>
+
       <!-- Education -->
       <a href="/codefolio/education/" class="nav-link-container">
         <img
@@ -69,7 +72,7 @@ const { selectedItem } = Astro.props;
           alt="Skills"
           class="nav-link-image"
         />
-       <div>Skills</div>
+        <div>Skills</div>
       </a>
 
       <!-- Experience -->
@@ -95,7 +98,12 @@ const { selectedItem } = Astro.props;
       </a>
 
       <!-- Contact -->
-      <a href="/codefolio/contact/" class="nav-link-container">
+      <a
+        href="/codefolio/contact/"
+        class={`nav-link-container w-inline-block ${
+          selectedItem === "contact" ? "w--current" : ""
+        }`}
+      >
         <img
           src="/codefolio/assets/browser.svg"
           loading="eager"
@@ -132,7 +140,7 @@ const { selectedItem } = Astro.props;
       tabindex="0"
     >
       <img
-        src={`${import.meta.env.BASE_URL}assets/menu.svg`}
+        src="/codefolio/assets/menu.svg"
         loading="eager"
         alt="Menu"
         class="navbar-icon"
