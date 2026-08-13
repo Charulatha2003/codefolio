@@ -41,27 +41,19 @@ const { selectedItem } = Astro.props;
         />
         <div>Home</div>
       </a>
-      <!-- About -->
-      <a
-        href={`${import.meta.env.BASE_URL}/about/`}
-        class="nav-link-container"
-      >
+      <a href="/codefolio/about/" class="nav-link-container">
         <img
-          src={`${import.meta.env.BASE_URL}assets/browser.svg`}
+          src="/codefolio/assets/browser.svg"
           loading="eager"
           alt="About"
           class="nav-link-image"
         />
         <div>About</div>
       </a>
-
       <!-- Education -->
-      <a
-        href={`${import.meta.env.BASE_URL}/education/`}
-        class="nav-link-container"
-      >
+      <a href="/codefolio/education/" class="nav-link-container">
         <img
-          src={`${import.meta.env.BASE_URL}assets/database.svg`}
+          src="/codefolio/assets/database.svg"
           loading="eager"
           alt="Education"
           class="nav-link-image"
@@ -70,26 +62,20 @@ const { selectedItem } = Astro.props;
       </a>
 
       <!-- Skills -->
-      <a
-        href={`${import.meta.env.BASE_URL}/skills/`}
-        class="nav-link-container"
-      >
+      <a href="/codefolio/skills/" class="nav-link-container">
         <img
-          src={`${import.meta.env.BASE_URL}assets/code.svg`}
+          src="/codefolio/assets/code.svg"
           loading="eager"
           alt="Skills"
           class="nav-link-image"
         />
-        <div>Skills</div>
+       <div>Skills</div>
       </a>
 
       <!-- Experience -->
-      <a
-        href={`${import.meta.env.BASE_URL}/experience/`}
-        class="nav-link-container"
-      >
+      <a href="/codefolio/experience/" class="nav-link-container">
         <img
-          src={`${import.meta.env.BASE_URL}assets/dns.svg`}
+          src="/codefolio/assets/dns.svg"
           loading="eager"
           alt="Experience"
           class="nav-link-image"
@@ -98,12 +84,9 @@ const { selectedItem } = Astro.props;
       </a>
 
       <!-- Projects -->
-      <a
-        href={`${import.meta.env.BASE_URL}/projects/`}
-        class="nav-link-container"
-      >
+      <a href="/codefolio/projects/" class="nav-link-container">
         <img
-          src={`${import.meta.env.BASE_URL}assets/favorite.svg`}
+          src="/codefolio/assets/favorite.svg"
           loading="eager"
           alt="Projects"
           class="nav-link-image"
@@ -112,14 +95,9 @@ const { selectedItem } = Astro.props;
       </a>
 
       <!-- Contact -->
-      <a
-        href={`${import.meta.env.BASE_URL}/contact/`}
-        class={`nav-link-container w-inline-block ${
-          selectedItem === "contact" ? "w--current" : ""
-        }`}
-      >
+      <a href="/codefolio/contact/" class="nav-link-container">
         <img
-          src={`${import.meta.env.BASE_URL}assets/browser.svg`}
+          src="/codefolio/assets/browser.svg"
           loading="eager"
           alt="Contact"
           class="nav-link-image"
@@ -129,19 +107,19 @@ const { selectedItem } = Astro.props;
 
       <!-- Resume -->
       <a
-        href={`${import.meta.env.BASE_URL}/resume/Charulatha_Resume.pdf`}
+        href="/codefolio/resume/Charulatha_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         class="nav-link-container w-inline-block"
       >
         <img
-        src={`${import.meta.env.BASE_URL}assets/back.svg`}
-        loading="eager"
-        alt="Resume"
-        class="nav-link-image"
-      />
-      <div>Resume</div>
-    </a>
+          src="/codefolio/assets/back.svg"
+          loading="eager"
+          alt="Resume"
+          class="nav-link-image"
+        />
+        <div>Resume</div>
+      </a>
 
     </nav>
 
