@@ -14,7 +14,7 @@ const { selectedItem } = Astro.props;
   <div class="nav-content">
 
     <!-- Profile -->
-    <a href={import.meta.env.BASE_URL} class="w-nav-brand" aria-label="home">
+    <a href="/codefolio/" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
         <div class="profile-data">
           <div class="label-white">
@@ -32,16 +32,15 @@ const { selectedItem } = Astro.props;
     <nav role="navigation" class="w-nav-menu">
 
       <!-- Home -->
-      <a href={import.meta.env.BASE_URL} class="nav-link-container">
+      <a href="/codefolio/" class="nav-link-container">
         <img
-          src={`${import.meta.env.BASE_URL}assets/home.svg`}
+          src="/codefolio/assets/home.svg"
           loading="eager"
           alt="Home"
           class="nav-link-image"
         />
         <div>Home</div>
       </a>
-
       <!-- About -->
       <a
         href={`${import.meta.env.BASE_URL}/about/`}
