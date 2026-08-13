@@ -11,84 +11,108 @@ const { selectedItem } = Astro.props;
   role="banner"
   class="sidebar w-nav"
 >
+
   <div class="nav-content">
-    <a href="/" class="w-nav-brand" aria-label="home">
+
+    <!-- Profile -->
+    <a href="#home" class="w-nav-brand" aria-label="home">
       <div class="niv-data">
-        <img
-          src="/assets/sam.jpg"
-          loading="eager"
-          alt="Profile picture"
-          class="niv-image"
-        />
-        <div>
-          <div class="label-white">Sam Bernstein</div>
-          <div class="label-gray">Software Engineer</div>
+        <div class="profile-data">
+
+          <div class="label-white">
+            Charulatha P
+          </div>
+
+          <div class="label-gray">
+            Python Developer | Fresher
+          </div>
+
         </div>
       </div>
     </a>
 
+
+    <!-- Navigation -->
     <nav role="navigation" class="w-nav-menu">
+
+
+      <!-- Home -->
+      <a href="/" class="nav-link-container">
+          <img src="/assets/home.svg" class="nav-link-image" />
+          <div>Home</div>
+      </a>
+
+
+      <!-- About -->
+      <a href="/about" class="nav-link-container">
+          <img src="/assets/browser.svg" class="nav-link-image" />
+          <div>About</div>
+      </a>
+
+
+      <!-- Education 3rd -->
+      <a href="/education" class="nav-link-container">
+          <img src="/assets/database.svg" class="nav-link-image" />
+          <div>Education</div>
+      </a>
+
+
+      <!-- Skills -->
+      <a href="/skills" class="nav-link-container">
+          <img src="/assets/code.svg" class="nav-link-image" />
+          <div>Skills</div>
+      </a>
+
+
+      <!-- Experience -->
+      <a href="/experience" class="nav-link-container">
+          <img src="/assets/dns.svg" class="nav-link-image" />
+          <div>Experience</div>
+      </a>
+
+
+      <!-- Projects -->
+      <a href="/projects" class="nav-link-container">
+          <img src="/assets/favorite.svg" class="nav-link-image" />
+          <div>Projects</div>
+      </a>
+
+
       <a
-        href="/"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'home' ? 'w--current' : ''
-        }`}
+    href="/contact"
+    class={`nav-link-container w-inline-block ${
+    selectedItem === "contact" ? "w--current" : ""
+    }`}
+>
+  <img
+    src="/assets/browser.svg"
+    loading="eager"
+    alt=""
+    class="nav-link-image"
+  />
+
+  <div>Contact</div>
+</a>
+
+      <!-- Resume -->
+      <a
+        href="/resume/Charulatha_Resume.pdf"
+        target="_blank"
+        class="nav-link-container w-inline-block"
       >
         <img
-          src="/assets/home.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
+        src="/assets/back.svg"
+        loading="eager"
+        alt=""
+        class="nav-link-image"
         />
-        <div>Home</div>
-      </a>
-      <a
-        href="/software-development"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'software-development' ? 'w--current' : ''
-        }`}
-        aria-current={
-          selectedItem === 'software-development' ? 'page' : undefined
-        }
-      >
-        <img
-          src="/assets/code.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Software development</div>
-      </a>
-      <a
-        href="/devops"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'devops' ? 'w--current' : ''
-        }`}
-      >
-        <img
-          src="/assets/dns.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>DevOps</div>
-      </a>
-      <a
-        href="/personal-projects"
-        class={`nav-link-container w-inline-block ${
-          selectedItem === 'personal-projects' ? 'w--current' : ''
-        }`}
-      >
-        <img
-          src="/assets/favorite.svg"
-          loading="eager"
-          alt=""
-          class="nav-link-image"
-        />
-        <div>Personal projects</div>
-      </a>
+  <div>Resume</div>
+</a>
+
     </nav>
 
+
+    <!-- Mobile Menu Button -->
     <div
       class="navbar-icon-button w-nav-button"
       style="-webkit-user-select: text;"
@@ -96,26 +120,55 @@ const { selectedItem } = Astro.props;
       role="button"
       tabindex="0"
     >
+
       <img
         src="/assets/menu.svg"
         loading="eager"
-        alt=""
+        alt="Menu"
         class="navbar-icon"
       />
+
     </div>
+
+
   </div>
 
+
   <script>
-    import { setupNav } from '../scripts/nav.js';
-    
+    import { setupNav } from "../scripts/nav.js";
+
     let cleanup;
-    document.addEventListener('astro:page-load', () => {
+
+    document.addEventListener("astro:page-load", () => {
       if (cleanup) cleanup();
       cleanup = setupNav();
     });
 
-    document.addEventListener('astro:before-swap', () => {
+    document.addEventListener("astro:before-swap", () => {
       if (cleanup) cleanup();
     });
   </script>
+
+
 </aside>
+
+
+<style>
+
+.profile-data {
+  padding: 20px 0;
+}
+
+.label-white {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+.label-gray {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #a0a0a0;
+}
+
+</style>

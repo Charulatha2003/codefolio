@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
-import Hero from "../components/Hero.astro";
+import Experience from "../components/Experience.astro";
 import "../styles/styles.css";
 ---
 
@@ -11,19 +11,29 @@ import "../styles/styles.css";
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <Header title="Charulatha P | Python Developer" />
+    <Header title="Experience | Charulatha P" />
 </head>
 
 <body>
-  <div class="content">
 
-    <Sidebar selectedItem="home" />
+<div class="content">
 
     <main class="main">
-      <Hero />
+
+        <div class="page-content">
+
+            <a href="/" class="back-button">
+                ← Back
+            </a>
+
+            <Experience />
+
+        </div>
+
     </main>
 
-  </div>
+</div>
+
 </body>
 
 </html>

@@ -1,0 +1,174 @@
+---
+const projects = [
+    {
+        title: "Heart Disease Prediction using Machine Learning",
+        tech: "Python | Machine Learning | Data Analysis",
+        description:
+            "Developed a machine learning-based prediction system to analyze medical data and predict heart disease risk using classification algorithms.",
+        features: [
+            "Performed data preprocessing including missing value handling, feature engineering, feature selection, and Min-Max normalization.",
+            "Trained and validated multiple supervised classification algorithms for predictive analysis.",
+            "Compared model performance using evaluation metrics to identify the optimal predictive model."
+        ]
+    },
+    {
+        title: "Library Management System",
+        tech: "SQL | DBMS | Database Design",
+        description:
+            "Designed a relational database system to manage library operations including authors, books, members, and borrowing records.",
+        features: [
+            "Created a fully normalized database schema following Third Normal Form (3NF).",
+            "Implemented SQL operations using JOINs, correlated subqueries, and aggregate functions.",
+            "Enabled efficient data retrieval and management of library records."
+        ]
+    }
+];
+---
+
+<section id="projects" class="projects">
+<div class="container">
+
+    <h2>Academic Projects</h2>
+
+    <div class="projects-container">
+
+        {projects.map((project) => (
+            <div class="project-card">
+
+                <h3>{project.title}</h3>
+
+                <p class="tech">
+                    {project.tech}
+                </p>
+
+                <p class="description">
+                    {project.description}
+                </p>
+
+                <ul>
+                    {project.features.map((feature) => (
+                        <li>{feature}</li>
+                    ))}
+                </ul>
+
+            </div>
+        ))}
+
+    </div>
+</div>
+</section>
+
+
+<style>
+.projects {
+    padding: 70px 0;
+}
+
+
+/* Section Title */
+.projects h2 {
+    color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-bottom: 32px;
+}
+
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* Project Card */
+.project-card {
+    background: #1c1c1c;
+    border: 1px solid #353535;
+    border-radius: 12px;
+    padding: 28px;
+    transition: 0.3s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffffff;
+}
+
+
+/* Project Title */
+.project-card h3 {
+    color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 8px;
+}
+
+
+/* Technology Stack */
+.project-card h4 {
+    color: #a8a8a8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 16px;
+}
+
+
+/* Project Description */
+.project-card p {
+    color: #a8a8a8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 12px;
+}
+
+
+/* Project List */
+.project-card ul {
+    padding-left: 0;
+    list-style: none;
+    margin-top: 16px;
+}
+
+
+.project-card li {
+    color: #a8a8a8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+
+/* Bullet Style */
+.project-card li::before {
+    content: "▹";
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .projects {
+        padding: 50px 0;
+    }
+
+    .project-card {
+        padding: 22px;
+    }
+
+}
+</style>

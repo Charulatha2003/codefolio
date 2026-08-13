@@ -1,0 +1,130 @@
+---
+const education = [
+    {
+        degree: "Bachelor of Engineering (B.E) - Computer Science and Engineering",
+        institution: "Annamalai University",
+        duration: "2021 - 2025",
+        details: "Completed Bachelor of Engineering in Computer Science and Engineering."
+    }
+];
+---
+
+<section id="education" class="education">
+<div class="container">
+
+    <h2>Education</h2>
+
+    <div class="education-container">
+
+        {education.map((edu) => (
+            <div class="education-card">
+
+                <h3>{edu.degree}</h3>
+
+                <h4>{edu.institution}</h4>
+
+                <span>{edu.duration}</span>
+
+                <p>{edu.details}</p>
+
+            </div>
+        ))}
+
+    </div>
+</div>
+</section>
+
+
+<style>
+.education {
+    padding: 70px 0;
+}
+
+
+/* Section Title */
+.education h2 {
+    color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-bottom: 32px;
+}
+
+
+/* Education Container */
+.education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+/* Education Card */
+.education-card {
+    background: #1c1c1c;
+    border: 1px solid #353535;
+    border-radius: 12px;
+    padding: 28px;
+    transition: 0.3s ease;
+}
+
+
+.education-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffffff;
+}
+
+
+/* Degree */
+.education-card h3 {
+    color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 12px;
+}
+
+
+/* Institution */
+.education-card h4 {
+    color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 8px;
+}
+
+
+/* Duration */
+.education-card span {
+    color: #a8a8a8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+}
+
+
+/* Description */
+.education-card p {
+    color: #a8a8a8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    margin-top: 15px;
+}
+
+
+@media (max-width: 600px) {
+
+    .education {
+        padding: 50px 0;
+    }
+
+    .education-card {
+        padding: 22px;
+    }
+
+}
+</style>

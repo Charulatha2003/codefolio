@@ -1,0 +1,142 @@
+---
+const skills = [
+    {
+        category: "Programming Language",
+        items: ["Python"]
+    },
+    {
+        category: "Web Development",
+        items: ["HTML", "CSS"]
+    },
+    {
+        category: "Database",
+        items: ["SQL"]
+    },
+    {
+        category: "Concepts",
+        items: ["Data Structures", "DBMS", "OOPS"]
+    },
+    {
+        category: "Other Skills",
+        items: ["XPath", "Regular Expressions (Regex)"]
+    },
+    {
+        category: "Tools",
+        items: ["Microsoft Excel"]
+    }
+];
+---
+
+<section id="skills" class="skills">
+<div class="container">
+    <h2>Technical Skills</h2>
+
+    <div class="skills-container">
+        {skills.map((skill) => (
+            <div class="skill-card">
+                <h3>{skill.category}</h3>
+
+                <ul>
+                    {skill.items.map((item) => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+            </div>
+        ))}
+    </div>
+    </div>
+</section>
+
+<style>
+.skills {
+    padding: 70px 0;
+}
+
+
+/* Section Title */
+.skills h2 {
+    color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    margin-bottom: 32px;
+}
+
+
+/* Skills Grid */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+
+/* Skill Card */
+.skill-card {
+    background: #1c1c1c;
+    border: 1px solid #353535;
+    border-radius: 12px;
+    padding: 24px;
+    transition: 0.3s ease;
+}
+
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffffff;
+}
+
+
+/* Category Name */
+.skill-card h3 {
+    color: #ffffff;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 16px;
+}
+
+
+/* Skill List */
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.skill-card li {
+    color: #a8a8a8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+
+.skill-card li::before {
+    content: "▹";
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .skills {
+        padding: 50px 0;
+    }
+}
+</style>
