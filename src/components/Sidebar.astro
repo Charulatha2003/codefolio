@@ -11,14 +11,12 @@ const { selectedItem } = Astro.props;
   role="banner"
   class="sidebar w-nav"
 >
-
   <div class="nav-content">
 
     <!-- Profile -->
-    <a href="#home" class="w-nav-brand" aria-label="home">
+    <a href={import.meta.env.BASE_URL} class="w-nav-brand" aria-label="home">
       <div class="niv-data">
         <div class="profile-data">
-
           <div class="label-white">
             Charulatha P
           </div>
@@ -26,91 +24,127 @@ const { selectedItem } = Astro.props;
           <div class="label-gray">
             Python Developer | Fresher
           </div>
-
         </div>
       </div>
     </a>
 
-
     <!-- Navigation -->
     <nav role="navigation" class="w-nav-menu">
 
-
       <!-- Home -->
-      <a href="/" class="nav-link-container">
-          <img src="/assets/home.svg" class="nav-link-image" />
-          <div>Home</div>
+      <a href={import.meta.env.BASE_URL} class="nav-link-container">
+        <img
+          src={`${import.meta.env.BASE_URL}assets/home.svg`}
+          loading="eager"
+          alt="Home"
+          class="nav-link-image"
+        />
+        <div>Home</div>
       </a>
-
 
       <!-- About -->
-      <a href="/about" class="nav-link-container">
-          <img src="/assets/browser.svg" class="nav-link-image" />
-          <div>About</div>
+      <a
+        href={`${import.meta.env.BASE_URL}about`}
+        class="nav-link-container"
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}assets/browser.svg`}
+          loading="eager"
+          alt="About"
+          class="nav-link-image"
+        />
+        <div>About</div>
       </a>
 
-
-      <!-- Education 3rd -->
-      <a href="/education" class="nav-link-container">
-          <img src="/assets/database.svg" class="nav-link-image" />
-          <div>Education</div>
+      <!-- Education -->
+      <a
+        href={`${import.meta.env.BASE_URL}education`}
+        class="nav-link-container"
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}assets/database.svg`}
+          loading="eager"
+          alt="Education"
+          class="nav-link-image"
+        />
+        <div>Education</div>
       </a>
-
 
       <!-- Skills -->
-      <a href="/skills" class="nav-link-container">
-          <img src="/assets/code.svg" class="nav-link-image" />
-          <div>Skills</div>
+      <a
+        href={`${import.meta.env.BASE_URL}skills`}
+        class="nav-link-container"
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}assets/code.svg`}
+          loading="eager"
+          alt="Skills"
+          class="nav-link-image"
+        />
+        <div>Skills</div>
       </a>
-
 
       <!-- Experience -->
-      <a href="/experience" class="nav-link-container">
-          <img src="/assets/dns.svg" class="nav-link-image" />
-          <div>Experience</div>
+      <a
+        href={`${import.meta.env.BASE_URL}experience`}
+        class="nav-link-container"
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}assets/dns.svg`}
+          loading="eager"
+          alt="Experience"
+          class="nav-link-image"
+        />
+        <div>Experience</div>
       </a>
-
 
       <!-- Projects -->
-      <a href="/projects" class="nav-link-container">
-          <img src="/assets/favorite.svg" class="nav-link-image" />
-          <div>Projects</div>
+      <a
+        href={`${import.meta.env.BASE_URL}projects`}
+        class="nav-link-container"
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}assets/favorite.svg`}
+          loading="eager"
+          alt="Projects"
+          class="nav-link-image"
+        />
+        <div>Projects</div>
       </a>
 
-
+      <!-- Contact -->
       <a
-    href="/contact"
-    class={`nav-link-container w-inline-block ${
-    selectedItem === "contact" ? "w--current" : ""
-    }`}
->
-  <img
-    src="/assets/browser.svg"
-    loading="eager"
-    alt=""
-    class="nav-link-image"
-  />
-
-  <div>Contact</div>
-</a>
+        href={`${import.meta.env.BASE_URL}contact`}
+        class={`nav-link-container w-inline-block ${
+          selectedItem === "contact" ? "w--current" : ""
+        }`}
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}assets/browser.svg`}
+          loading="eager"
+          alt="Contact"
+          class="nav-link-image"
+        />
+        <div>Contact</div>
+      </a>
 
       <!-- Resume -->
       <a
-        href="/resume/Charulatha_Resume.pdf"
+        href={`${import.meta.env.BASE_URL}resume/Charulatha_Resume.pdf`}
         target="_blank"
+        rel="noopener noreferrer"
         class="nav-link-container w-inline-block"
       >
         <img
-        src="/assets/back.svg"
-        loading="eager"
-        alt=""
-        class="nav-link-image"
+          src={`${import.meta.env.BASE_URL}assets/back.svg`}
+          loading="eager"
+          alt="Resume"
+          class="nav-link-image"
         />
-  <div>Resume</div>
-</a>
+        <div>Resume</div>
+      </a>
 
     </nav>
-
 
     <!-- Mobile Menu Button -->
     <div
@@ -120,19 +154,15 @@ const { selectedItem } = Astro.props;
       role="button"
       tabindex="0"
     >
-
       <img
-        src="/assets/menu.svg"
+        src={`${import.meta.env.BASE_URL}assets/menu.svg`}
         loading="eager"
         alt="Menu"
         class="navbar-icon"
       />
-
     </div>
 
-
   </div>
-
 
   <script>
     import { setupNav } from "../scripts/nav.js";
@@ -149,12 +179,9 @@ const { selectedItem } = Astro.props;
     });
   </script>
 
-
 </aside>
 
-
 <style>
-
 .profile-data {
   padding: 20px 0;
 }
@@ -170,5 +197,4 @@ const { selectedItem } = Astro.props;
   font-size: 14px;
   color: #a0a0a0;
 }
-
 </style>
